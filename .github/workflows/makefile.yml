@@ -25,3 +25,9 @@ jobs:
 
     - name: Copy Artifacts
       run: cp index.html public
+    - name: Deploy Artifacts
+      uses: actions/upload-pages-artifact@v1.0.8
+      with:
+        path: public
+        
+    
