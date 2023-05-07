@@ -24,7 +24,11 @@ jobs:
       run: mkdir public && rm docgen
 
     - name: Copy Artifacts
-      run: cp index.html public
+      run: tar -cvf artifact.tar -T index.html
+
+    - name: Create zip
+      run: gzip artifact.tar
+
     - name: Deploy Artifacts
       uses: actions/upload-pages-artifact@v1.0.8
       with:
