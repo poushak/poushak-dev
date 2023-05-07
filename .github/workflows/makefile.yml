@@ -1,0 +1,30 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Add apt URL
+      run: apk add --no-cache curl
+
+    - name: Download docgen
+      run: curl -o "docgen" https://raw.githubusercontent.com/thedevsaddam/docgen-bin/master/latest/linux_amd64 && chmod +x ./docgen
+
+    - name: Run docgen
+      run: ./docgen build -i neerbiauth.json -o ./index.html
+
+    - name: Clean artifacts
+      run: mkdir public && rm docgen
+
+    - name: Copy Artifacts
+      run: cp index.html public
