@@ -27,9 +27,11 @@ jobs:
       run: tar -cvf github-pages.tar index.html
 
     - name: Create zip
-      run: gzip github-pages.tar
+      run: gzip github-pages.tar && mv github-pages.tar.gz public/
 
     - name: Deploy Artifacts
       uses: actions/upload-pages-artifact@v1.0.8
+      with:
+        path: public
         
     
