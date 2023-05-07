@@ -31,7 +31,5 @@ jobs:
 
     - name: Deploy Artifacts
       uses: actions/upload-pages-artifact@v1.0.8
-      with:
-        path: public
         
     
