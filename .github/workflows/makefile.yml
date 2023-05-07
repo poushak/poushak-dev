@@ -24,10 +24,10 @@ jobs:
       run: mkdir public && rm docgen
 
     - name: Copy Artifacts
-      run: tar -cvf artifact.tar index.html
+      run: tar -cvf github-pages.tar index.html
 
     - name: Create zip
-      run: gzip artifact.tar
+      run: gzip github-pages.tar
 
     - name: Deploy Artifacts
       uses: actions/upload-pages-artifact@v1.0.8
