@@ -47,8 +47,8 @@ services:
     restart: always
     ports:
       - "7002:6379"
-    volumes:
-      - ./redis/conf:/opt/conf
+    # volumes:
+    #   - ./redis/conf:/opt/conf
   nginx:
     container_name: nginx
     image: nginx:1.23.4-alpine

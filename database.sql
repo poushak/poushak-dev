@@ -1,6 +1,8 @@
+CREATE SCHEMA IF NOT EXISTS poushak;
+
 SET search_path=poushak;
 
-CREATE TABLE users(
+CREATE TABLE IF NOT EXISTS users(
 	id varchar(50) NOT NULL,
 	first_name varchar(50) DEFAULT '',
 	last_name varchar(50) DEFAULT '',
@@ -21,7 +23,7 @@ CREATE TABLE users(
 	CONSTRAINT users_pkey PRIMARY KEY(id)
 )
 
-CREATE TABLE addresses(
+CREATE TABLE IF NOT EXISTS addresses(
 	id varchar(50) NOT NULL,
 	user_id varchar(50),
 	first_line varchar(100),

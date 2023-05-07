@@ -1,0 +1,229 @@
+{
+    "info": {
+            "_postman_id": "12b13152-32d8-4379-b1bc-6d31d0ea6cfa",
+            "name": "Poushak",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+            {
+                    "name": "Seller",
+                    "item": [
+                            {
+                                    "name": "Create Product",
+                                    "request": {
+                                            "method": "POST",
+                                            "header": [],
+                                            "body": {
+                                                    "mode": "raw",
+                                                    "raw": "{\r\n    \"title\": \"skirt\",\r\n    \"description\": \"this is a skirt\",\r\n    \"size\": \"L\",\r\n    \"color\": \"Grey\",\r\n    \"brand\": \"Stony Brook\",\r\n    \"altered\": false,\r\n    \"sellerId\": \"some random id\",\r\n    \"images\": [\"link to some image\"],\r\n    \"gender\": \"female\",\r\n    \"occasion\": \"casual\",\r\n    \"type\": \"skirt\",\r\n    \"timesRented\": 1,\r\n    \"apparelType\": \"bottomWear\",\r\n    \"fabric\": \"cotton/polyester\",\r\n    \"fit\": \"N/A\",\r\n    \"sleeveLength\": \"half knee\",\r\n    \"rating\": 4.1,\r\n    \"quantity\": 1,\r\n    \"tags\": [\"casual\", \"exclusive\", \"party wear\"],\r\n    \"purchaseDate\": \"2023-04-27T15:57:05.106Z\",\r\n    \"marketPrice\": 10000,\r\n    \"offeredPrice\": 2000,\r\n    \"location\": {\r\n        \"firstLine\": \"this is first line\",\r\n        \"secondLine\": \"this is second line\",\r\n        \"city\": \"Bangalore\",\r\n        \"district\": \"Bangalore\",\r\n        \"state\": \"Karnataka\",\r\n        \"country\":\"India\",\r\n        \"fullAddress\":\"This is a full address string craated out of other fields\",\r\n        \"pincode\": \"560035\",\r\n        \"latitude\": 13.000123,\r\n        \"longitude\": 14.000123\r\n    }\r\n}",
+                                                    "options": {
+                                                            "raw": {
+                                                                    "language": "json"
+                                                            }
+                                                    }
+                                            },
+                                            "url": {
+                                                    "raw": "localhost:3001/products",
+                                                    "host": [
+                                                            "localhost"
+                                                    ],
+                                                    "port": "3001",
+                                                    "path": [
+                                                            "products"
+                                                    ]
+                                            }
+                                    },
+                                    "response": []
+                            },
+                            {
+                                    "name": "Get Products",
+                                    "request": {
+                                            "method": "GET",
+                                            "header": [],
+                                            "url": {
+                                                    "raw": "localhost:3001/products",
+                                                    "host": [
+                                                            "localhost"
+                                                    ],
+                                                    "port": "3001",
+                                                    "path": [
+                                                            "products"
+                                                    ]
+                                            }
+                                    },
+                                    "response": []
+                            },
+                            {
+                                    "name": "Update Product",
+                                    "request": {
+                                            "method": "PUT",
+                                            "header": [],
+                                            "body": {
+                                                    "mode": "raw",
+                                                    "raw": "{\r\n    \"color\": \"Green\"\r\n}",
+                                                    "options": {
+                                                            "raw": {
+                                                                    "language": "json"
+                                                            }
+                                                    }
+                                            },
+                                            "url": {
+                                                    "raw": "localhost:3001/products/644a9d14f5a5f3b1c61d7794",
+                                                    "host": [
+                                                            "localhost"
+                                                    ],
+                                                    "port": "3001",
+                                                    "path": [
+                                                            "products",
+                                                            "644a9d14f5a5f3b1c61d7794"
+                                                    ]
+                                            }
+                                    },
+                                    "response": []
+                            },
+                            {
+                                    "name": "Delete Product",
+                                    "request": {
+                                            "method": "DELETE",
+                                            "header": [],
+                                            "url": {
+                                                    "raw": "localhost:3001/products/644a990cf5a5f3b1c61d778d",
+                                                    "host": [
+                                                            "localhost"
+                                                    ],
+                                                    "port": "3001",
+                                                    "path": [
+                                                            "products",
+                                                            "644a990cf5a5f3b1c61d778d"
+                                                    ]
+                                            }
+                                    },
+                                    "response": []
+                            },
+                            {
+                                    "name": "Upload Images",
+                                    "request": {
+                                            "method": "POST",
+                                            "header": [],
+                                            "body": {
+                                                    "mode": "formdata",
+                                                    "formdata": [
+                                                            {
+                                                                    "key": "file",
+                                                                    "type": "file",
+                                                                    "src": "/C:/Users/Rishi_Suresh/OneDrive - Dell Technologies/Pictures/Saved Pictures/wallpaper.jpg"
+                                                            }
+                                                    ]
+                                            },
+                                            "url": {
+                                                    "raw": "localhost:3001/products/{{userId}}}}/images",
+                                                    "host": [
+                                                            "localhost"
+                                                    ],
+                                                    "port": "3001",
+                                                    "path": [
+                                                            "products",
+                                                            "{{userId}}}}",
+                                                            "images"
+                                                    ]
+                                            }
+                                    },
+                                    "response": []
+                            }
+                    ]
+            },
+            {
+                    "name": "Auth",
+                    "item": [
+                            {
+                                    "name": "Register",
+                                    "request": {
+                                            "method": "POST",
+                                            "header": [],
+                                            "body": {
+                                                    "mode": "raw",
+                                                    "raw": "{\r\n    \"email\": \"rishisuresh9632@gmail.com\",\r\n    \"phone\": \"+918792615476\",\r\n    \"password\": \"testing123\",\r\n    \"confirmPassword\": \"testing123\",\r\n    \"firstName\": \"Rishi\",\r\n    \"lastName\": \"Suresh\",\r\n    \"tAndC\": true,\r\n    \"pan\": \"AAAAA1111B\",\r\n    \"aadhar\": \"1111-1111-1111\",\r\n    \"gender\": \"male\",\r\n    \"fbEmail\": \"test@123.com\",\r\n    \"dob\": \"2023-04-30T09:28:41.227Z\"\r\n}",
+                                                    "options": {
+                                                            "raw": {
+                                                                    "language": "json"
+                                                            }
+                                                    }
+                                            },
+                                            "url": {
+                                                    "raw": "localhost:9000/users",
+                                                    "host": [
+                                                            "localhost"
+                                                    ],
+                                                    "port": "9000",
+                                                    "path": [
+                                                            "users"
+                                                    ]
+                                            }
+                                    },
+                                    "response": []
+                            },
+                            {
+                                    "name": "Login",
+                                    "request": {
+                                            "method": "POST",
+                                            "header": [
+                                                    {
+                                                            "key": "",
+                                                            "value": "",
+                                                            "type": "default",
+                                                            "disabled": true
+                                                    }
+                                            ],
+                                            "body": {
+                                                    "mode": "raw",
+                                                    "raw": "{\r\n    \"password\": \"testing123\",\r\n    \"email\": \"foo@bar.com\"\r\n}",
+                                                    "options": {
+                                                            "raw": {
+                                                                    "language": "json"
+                                                            }
+                                                    }
+                                            },
+                                            "url": {
+                                                    "raw": "localhost:9000/users/auth",
+                                                    "host": [
+                                                            "localhost"
+                                                    ],
+                                                    "port": "9000",
+                                                    "path": [
+                                                            "users",
+                                                            "auth"
+                                                    ]
+                                            }
+                                    },
+                                    "response": []
+                            },
+                            {
+                                    "name": "Verify",
+                                    "request": {
+                                            "method": "GET",
+                                            "header": [
+                                                    {
+                                                            "key": "Authorization",
+                                                            "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODI4NTkyMjMsImlhdCI6MTY4Mjg1ODAyMywiaWQiOiI3OTgwYTkxNC1lM2JiLTQ1N2EtNjE5ZS0wZjliMDUzYjg4ZTMiLCJuYW1lIjoiUmlzaGkgU3VyZXNoIn0.FEvisDbBtc0fExqltvJCQ_jCqMQ92o1KPUqSId6-Qzd1KheqzK5AhHhQvTQF1mX5lk-CLM1JI9N9T6izuoE8gg",
+                                                            "type": "default"
+                                                    }
+                                            ],
+                                            "url": {
+                                                    "raw": "localhost:9000/users/auth/verify",
+                                                    "host": [
+                                                            "localhost"
+                                                    ],
+                                                    "port": "9000",
+                                                    "path": [
+                                                            "users",
+                                                            "auth",
+                                                            "verify"
+                                                    ]
+                                            }
+                                    },
+                                    "response": []
+                            }
+                    ]
+            }
+    ]
+}
