@@ -59,3 +59,8 @@ services:
     environment:
       # - NGINX_HOST=poushak.com
       - NGINX_PORT=80
+  swagger:
+    container_name: swagger
+    build: ./swagger
+    ports:
+      - "7004:8080"
