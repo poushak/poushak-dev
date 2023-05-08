@@ -1,5 +1,21 @@
-version: '3'
+version: '3.4'
 services:
+  auth:
+    container_name: auth
+    image: auth:1.0.0
+    restart: always
+    env_file: auth/.env
+    ports:
+      - "7005:9000"
+  seller:
+    container_name: seller
+    image: seller:1.0.0
+    restart: always
+    env_file: seller/.env
+    ports:
+      - "7006:3001"
+    volumes:
+      - ./seller/poushak.json:/opt/poushak.json
   mongo:
     container_name: mongo
     image: mongo:6.0.5
