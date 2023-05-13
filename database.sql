@@ -26,6 +26,8 @@ CREATE TABLE IF NOT EXISTS users(
 CREATE TABLE IF NOT EXISTS addresses(
 	id varchar(50) NOT NULL,
 	user_id varchar(50),
+	name varchar(50),
+	phone varchar(15),
 	first_line varchar(100),
 	second_line varchar(100),
 	address_string varchar(300),
