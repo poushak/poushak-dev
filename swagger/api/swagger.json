@@ -171,6 +171,26 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/seller/health",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"seller",
+								"health"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -708,6 +728,109 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/auth/health",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buyer",
+			"item": [
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Get Products",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODUxOTc5NDMsImlhdCI6MTY4NDU5MzE0MywiaWQiOiI3OTgwYTkxNC1lM2JiLTQ1N2EtNjE5ZS0wZjliMDUzYjg4ZTMiLCJuYW1lIjoiWmVuIHdvbGYifQ.OyWa_E8cu_Urxc-MBGxU7eSc2z2a2VF1gbteDbTNtzNUvdY8OZ4BLP1EixkjTxU8dgcxaLHsioXkTmR_HB3Ftg",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/buyer/products",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"buyer",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODUxOTc5NDMsImlhdCI6MTY4NDU5MzE0MywiaWQiOiI3OTgwYTkxNC1lM2JiLTQ1N2EtNjE5ZS0wZjliMDUzYjg4ZTMiLCJuYW1lIjoiWmVuIHdvbGYifQ.OyWa_E8cu_Urxc-MBGxU7eSc2z2a2VF1gbteDbTNtzNUvdY8OZ4BLP1EixkjTxU8dgcxaLHsioXkTmR_HB3Ftg",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/buyer/products/{{productId}}",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"buyer",
+										"products",
+										"{{productId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/buyer/health",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"buyer",
+								"health"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
