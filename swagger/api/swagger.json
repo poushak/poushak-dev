@@ -355,8 +355,129 @@
 						{
 							"name": "Change Password",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODUxOTc5NDMsImlhdCI6MTY4NDU5MzE0MywiaWQiOiI3OTgwYTkxNC1lM2JiLTQ1N2EtNjE5ZS0wZjliMDUzYjg4ZTMiLCJuYW1lIjoiWmVuIHdvbGYifQ.OyWa_E8cu_Urxc-MBGxU7eSc2z2a2VF1gbteDbTNtzNUvdY8OZ4BLP1EixkjTxU8dgcxaLHsioXkTmR_HB3Ftg",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\": \"test1234\",\r\n    \"newPassword\": \"testing123\",\r\n    \"confirmPassword\": \"testing123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/auth/users/7980a914-e3bb-457a-619e-0f9b053b88e3/change",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"users",
+										"7980a914-e3bb-457a-619e-0f9b053b88e3",
+										"change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset Password OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"+918792615476\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/auth/users/reset",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"users",
+										"reset"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"+918792615476\",\r\n    \"nonce\": \"426ff59f-51a3-45bb-5776-3f598eacb0fd\",\r\n    \"otp\": \"000000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/auth/users/reset/verify",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"users",
+										"reset",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nonce\": \"1013c729-8415-43ea-4164-a7e15c3a16c3\",\r\n    \"newPassword\": \"testing123\",\r\n    \"confirmPassword\": \"testing123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/auth/users/reset/change",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"users",
+										"reset",
+										"change"
+									]
+								}
 							},
 							"response": []
 						},
