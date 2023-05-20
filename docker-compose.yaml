@@ -16,6 +16,15 @@ services:
       - "7006:3001"
     volumes:
       - ./seller/poushak.json:/opt/poushak.json
+  buyer:
+    container_name: buyer
+    image: buyer:1.0.0
+    restart: always
+    env_file: buyer/.env
+    ports:
+      - "7007:3001"
+    # volumes:
+    #   - ./seller/poushak.json:/opt/poushak.json
   mongo:
     container_name: mongo
     image: mongo:6.0.5
