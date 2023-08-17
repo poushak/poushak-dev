@@ -149,6 +149,36 @@ ALTER TABLE ONLY poushak.addresses
     ADD CONSTRAINT addresses_users_fkey FOREIGN KEY (user_id) REFERENCES poushak.users(id);
 
 
+CREATE TABLE IF NOT EXISTS orders (
+	id varchar(50),
+	buyer_id varchar(50) NOT NULL,
+	seller_id varchar(50) NOT NULL,
+	address_id varchar(50) NOT NULL,
+    scheduled_time timestamp with time zone,
+	order_status varchar(50),
+	amount integer,
+	products json[],
+	created_at timestamp with time zone DEFAULT current_timestamp,
+	updated_at timestamp with time zone DEFAULT current_timestamp,
+	CONSTRAINT orders_pkey PRIMARY KEY(id),
+	CONSTRAINT orders_buyer_fkey FOREIGN KEY(buyer_id) REFERENCES users(id),
+	CONSTRAINT orders_seller_fkey FOREIGN KEY(seller_id) REFERENCES users(id),
+	CONSTRAINT orders_address_fkey FOREIGN KEY(address_id) REFERENCES addresses(id)
+)
+
+CREATE TABLE IF NOT EXISTS payments (
+	id varchar(50) NOT NULL,
+	order_id varchar(50) NOT NULL,
+	amount decimal(7, 2) NOT NULL,
+	payment_status varchar(50) DEFAULT '',
+	refund_id varchar(50),
+	refund_status varchar(50) DEFAULT '',
+	created_at timestamp with time zone DEFAULT current_timestamp,
+	updated_at timestamp with time zone DEFAULT current_timestamp,
+	CONSTRAINT payments_pkey PRIMARY KEY(id),
+	CONSTRAINT payments_order_fkey FOREIGN KEY(order_id) REFERENCES orders(id)
+)
+
 --
 -- PostgreSQL database dump complete
 --
